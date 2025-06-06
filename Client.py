@@ -38,6 +38,9 @@ class Client:
 
   def list_musics(self,):
     print(self.musicas)
+    input("\n\nPressione Enter para continuar...")
+
 
   def list_playlist(self,):
     self.tree.pretty_print(self.raiz)
+    input("\n\nPressione Enter para continuar...")

@@ -11,25 +11,47 @@ system = Client()
 start_system()
 
 while True:
+  ascii_art = """
+                                                                                                                                                 
+                                                                                                                                                 
+       00000000000000                                                                                                                             
+       00000000000000000                                                                                                                          
+       0000       00000000                                                                                                                        
+       0000          000000 00000     000000     00000    000000000    00000000000000 00000000000000     000000000     00000 000000              
+       0000             000 000000    000000     00000 00000000000000  00000000000000 00000000000000   0000000000000   0000000000000             
+       0000              000 00000   00000000   00000 000000    000000        0000000         000000  000000    00000  000000   00000            
+       0000              000  00000  00000000   00000 00000      00000       000000         000000   000000     000000 00000    00               
+       0000            0000   00000 0000  0000 00000  0000000000000000    0000000         0000000    00000000000000000 00000                     
+       0000         0000000    000000000  0000000001  00000             20000004        0000000      000000            00000                     
+       00000     000000000     000000000   00000000    000000     0000 0000000        0000000         000000     0000  00000                     
+       00000000000000000        0000000    00000000     00000000000000 000000000000000000000000000000  000000000000000 00000                     
+       0000000000000            000000      000000        0000000000   00000000000000 000000000000000     000000000    00000                     
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+  """
 
-  value = input('Escolha uma das opções: \t\t \n ' \
-                '1-Adicionar Musicas ' \
-                '\n 2-Adicionar Playlist' \
-                '\n 3-Adicionar Musicas a Playlist ' \
-                '\n 4-Listar Musicas' \
-                '\n 5-Listar Playlist' \
-                '\n 6-Tocar Musica' \
+  print(ascii_art)
+  print('Bem-Vindo ao Dwezzer! O seu player de música\n\n')
+  value = input('Escolha uma opção: \t\t \n \n ' \
+                '1-Adicionar Músicas ' \
+                '\n 2-Criar Playlist' \
+                '\n 3-Adicionar Música à Playlist ' \
+                '\n 4-Listar Músicas' \
+                '\n 5-Listar Playlists' \
+                '\n 6-Tocar Música' \
                 '\n 7-Tocar Plalist \n 8-Sair\n\n')
   
   match(int(value)):
     case 1:
-      name = input('Nome da musica:')
+      name = input('Nome da música:')
       system.add_musics(name)
     case 2:
       name = input('Nome da playlist:')
       system.add_playlist(name)
     case 3:
-      name = input('Nome da musica:')
+      name = input('Nome da música:')
       name1 = input('Nome da playlist:')
       system.add_musics_in_playlist(name1, name)
     case 4:
@@ -37,10 +59,12 @@ while True:
     case 5:
       system.list_playlist()
     case 6:
-      name = input('Nome da musica:')
+      name = input('Nome da música:')
       system.play_music(name)
     case 7:
       name = input('Nome da playlist:')
       system.play_playlist(name)
     case 8:
       break
+
+  os.system('clear')  
